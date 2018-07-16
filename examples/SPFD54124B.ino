@@ -2,10 +2,8 @@
 #include <Adafruit_GFX.h>
 #include <Adafruit_SPFD54124B.h>
 
-#define TFT_CS    10
-#define TFT_MOSI  11
-#define TFT_RESET  12
-#define TFT_CLK   13
+#define TFT_CS    		10
+#define TFT_RESET  		12
 
 #define BLACK           0x0000
 #define BLUE            0x001F

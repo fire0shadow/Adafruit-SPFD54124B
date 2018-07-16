@@ -71,8 +71,8 @@
 
 class Adafruit_SPFD54124B : public Adafruit_GFX {
 	public:
-  	Adafruit_SPFD54124B(int8_t SID, int8_t SCLK, int8_t RST, int8_t CS);
-  	Adafruit_SPFD54124B(int8_t RST, int8_t CS);
+  		Adafruit_SPFD54124B(int8_t SID, int8_t SCLK, int8_t RST, int8_t CS);
+  		Adafruit_SPFD54124B(int8_t RST, int8_t CS);
 
 		void	begin(),
     			setWindow(uint8_t x0, uint8_t y0, uint8_t x1, uint8_t y1),
@@ -81,29 +81,29 @@ class Adafruit_SPFD54124B : public Adafruit_GFX {
    				drawPixel(int16_t x, int16_t y, uint16_t color),
     			drawFastVLine(int16_t x, int16_t y, int16_t h, uint16_t color),
     			drawFastHLine(int16_t x, int16_t y, int16_t w, uint16_t color),
-    			fillRect(int16_t x, int16_t y, int16_t w, int16_t h, uint16_t c),
+    			fillRect(int16_t x, int16_t y, int16_t w, int16_t h, uint16_t c);
 
-  	uint16_t Color565(uint8_t r, uint8_t g, uint8_t b);
+  		uint16_t Color565(uint8_t r, uint8_t g, uint8_t b);
 
 	private:
-  	void writeCommand(uint8_t c),
-		void writeData(uint8_t c);
+  		void	writeCommand(uint8_t c),
+				writeData(uint8_t c);
 
-  	bool hwSPI;
+  		bool hwSPI;
 
-  	int8_t	cs,
-  					rst,
-  					sid,
-  					sclk;
+  		int8_t	cs,
+  				rst,
+  				sid,
+  				sclk;
 
-  	volatile uint8_t	*dataport,
-  										*clkport,
-  										*csport;
+  		volatile uint8_t	*dataport,
+  							*clkport,
+  							*csport;
 
-  	uint8_t	datapinmask,
-  					clkpinmask,
-  					cspinmask,
-  					spi_save;
+  		uint8_t	datapinmask,
+  				clkpinmask,
+  				cspinmask,
+  				spi_save;
 };
 
 #endif
